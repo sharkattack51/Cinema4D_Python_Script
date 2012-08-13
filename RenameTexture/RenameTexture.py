@@ -2,7 +2,11 @@
 
 """
 RenameTexture
+選択マテリアル内のテクスチャパスを強制リネームします。
 
+@author     koichi
+@email      sharkattack51@gmail.com
+@twitter    @sharkattack51
 @version    1.0.1
 @date       2012/08/13
 """

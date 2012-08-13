@@ -1,9 +1,9 @@
-#coding:utf-8
+ï»¿#coding:utf-8
 
 """
 BillboardChildren
-ƒOƒ‹[ƒvˆÈ‰º‚Ì‘æˆêŠK‘w‚Ìq‹Ÿ‚ÌƒIƒuƒWƒFƒNƒg‚ğƒ^[ƒQƒbƒg‚ÌŒü‚«‚É
-ƒrƒ‹ƒ{[ƒhˆ—‚µ‚Ü‚·B
+ã‚°ãƒ«ãƒ¼ãƒ—ä»¥ä¸‹ã®ç¬¬ä¸€éšå±¤ã®å­ä¾›ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®å‘ãã«
+ãƒ“ãƒ«ãƒœãƒ¼ãƒ‰å‡¦ç†ã—ã¾ã™ã€‚
 
 @author     koichi
 @email      sharkattack51@gmail.com
@@ -17,44 +17,44 @@ import math
 
 #######################################
 
-#ƒ^[ƒQƒbƒgƒIƒuƒWƒFƒNƒg–¼İ’è@‹ó‚Ìê‡ƒ^[ƒQƒbƒg‚ÍƒŒƒ“ƒ_[ƒAƒNƒeƒBƒu‚ÈƒJƒƒ‰‚É‚È‚è‚Ü‚· ("aaa"/"")
+#ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆåè¨­å®šã€€ç©ºã®å ´åˆã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¯ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªã‚«ãƒ¡ãƒ©ã«ãªã‚Šã¾ã™ ("aaa"/"")
 targetName = ""
 
-#ƒsƒbƒ`Šp‚ÌŒÅ’è (True/False)
+#ãƒ”ãƒƒãƒè§’ã®å›ºå®š (True/False)
 holdPitch = True
 
 #######################################
 
 def main():
 
-    #ƒ^[ƒQƒbƒgƒIƒuƒWƒFƒNƒgæ“¾
+    #ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå–å¾—
     if not targetName:
-        #ƒV[ƒ“ƒJƒƒ‰
+        #ã‚·ãƒ¼ãƒ³ã‚«ãƒ¡ãƒ©
         targetObj = doc.GetRenderBaseDraw().GetSceneCamera(doc)
     else:
-        #ƒIƒuƒWƒFƒNƒgƒT[ƒ`
+        #ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚µãƒ¼ãƒ
         targetObj = doc.SearchObject(targetName)
     if not targetObj:
         return
     
-    #ƒ‹[ƒvˆ—
+    #ãƒ«ãƒ¼ãƒ—å‡¦ç†
     parent = op.GetObject()
     child = parent.GetDown()
     while child:
-        #ƒ[ƒ‹ƒhˆÊ’uæ“¾
+        #ãƒ¯ãƒ¼ãƒ«ãƒ‰ä½ç½®å–å¾—
         position = child.GetMg().off
         dirVec = targetObj.GetMg().off - position
         
-        #‰ñ“]ŒvZ
+        #å›è»¢è¨ˆç®—
         newRot = c4d.utils.VectorToHPB(dirVec)
         if holdPitch:
             newRot.y = 0
         newRot = newRot - parent.GetAbsRot()
         
-        #“K—p 
+        #é©ç”¨ 
         child.SetAbsRot(newRot)
         
-        #Ÿ‚Ö
+        #æ¬¡ã¸
         child = child.GetNext()
         if not child:
             break
