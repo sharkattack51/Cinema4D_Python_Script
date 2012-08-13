@@ -1,4 +1,4 @@
-#coding:utf-8
+ï»¿#coding:utf-8
 
 """
 RenameTexture
@@ -151,7 +151,7 @@ def RenameTexture(mat):
                     tex = mat[c4d.MATERIAL_DISPLACEMENT_SHADER]
                 
                 #check shader type
-                if(tex and ((tex.GetTypeName() == "Bitmap") or (tex.GetTypeName() == "ƒrƒbƒgƒ}ƒbƒv"))):
+                if(tex and ((tex.GetTypeName() == "Bitmap") or (tex.GetTypeName() == "ãƒ“ãƒƒãƒˆãƒžãƒƒãƒ—"))):
                     #rename
                     tex_bc = tex.GetData()
                     file_name = tex_bc.GetData(c4d.BITMAPSHADER_FILENAME)
