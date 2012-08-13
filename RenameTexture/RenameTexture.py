@@ -3,10 +3,7 @@
 """
 RenameTexture
 
-@author     koichi
-@email      sharkattack51@gmail.com
-@twitter    @sharkattack51
-@version    1.0.0
+@version    1.0.1
 @date       2011/04/08
 """
 
@@ -152,9 +149,9 @@ def RenameTexture(mat):
                     tex = mat[c4d.MATERIAL_SPECULAR_SHADER]
                 elif(ch_use == 10):
                     tex = mat[c4d.MATERIAL_DISPLACEMENT_SHADER]
-
+                
                 #check shader type
-                if(tex and (tex.GetTypeName() == "Bitmap")):
+                if(tex and ((tex.GetTypeName() == "Bitmap") or (tex.GetTypeName() == "ビットマップ"))):
                     #rename
                     tex_bc = tex.GetData()
                     file_name = tex_bc.GetData(c4d.BITMAPSHADER_FILENAME)
