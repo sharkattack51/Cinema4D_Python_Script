@@ -4,7 +4,7 @@
 RenameTexture
 
 @version    1.0.1
-@date       2011/04/08
+@date       2012/08/13
 """
 
 
