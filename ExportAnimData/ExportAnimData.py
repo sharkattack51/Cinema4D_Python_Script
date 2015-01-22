@@ -29,7 +29,7 @@ def main():
       keys.append(value)
     animTable[name] = keys
   
-  # リストを保存
+  # 保存
   path = storage.SaveDialog(title = 'save animation data')
   if path != "":
     f = open(path, 'w')
